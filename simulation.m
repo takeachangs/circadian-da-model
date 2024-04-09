@@ -4,13 +4,12 @@ p = parameters;
 v = var_indices;
 
 init_y = [ones(1,10), 0]; 
-ode_opt = {'RelTol',1e-3,'AbsTol',1e-3};
 tspan = [0 24*5];
-[~,Y] = model(tspan,init_y,p,v,ode_opt);
+[~,Y] = model(tspan,init_y,p,v);
 
 init_y = Y(end,:);
 tspan = [0 24];
-[T,Y] = model(tspan,init_y,p,v,ode_opt);
+[T,Y] = model(tspan,init_y,p,v);
 
 % solutions 
 p1 = Y(:,v.p1);

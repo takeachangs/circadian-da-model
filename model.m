@@ -1,4 +1,4 @@
-function [T,Y] = model(tspan,init_y,p,v,options)
+function [T,Y] = model(tspan,init_y,p,v)
     %{
     Inputs: 
         t           time vector
@@ -8,12 +8,7 @@ function [T,Y] = model(tspan,init_y,p,v,options)
     Output: 
         [T,Y]       output of ODE solver
     %}
-    
-    if nargin == 4
-        options = {};
-    end
-    
-    ode_opt = odeset(options{:});
-    [T,Y] = ode45(@(t,y)ode_rhs(t,y,p,v),tspan,init_y,ode_opt);
+
+    [T,Y] = ode45(@(t,y)ode_rhs(t,y,p,v),tspan,init_y);
     
     end

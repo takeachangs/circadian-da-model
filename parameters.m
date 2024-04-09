@@ -85,7 +85,7 @@ function p = parameters
     p.val(p.k_mp) = 0.45; % Inhibitory constant for MP
     p.val(p.k_dat) = 200; % Michaelis-Menten constant for DAT
     % MP(t) conentration decay function 
-    p.val(p.mp0) = 5.0; % administered concentration of MP (nM)
+    p.val(p.mp0) = 0; % administered concentration of MP (nM)
     p.val(p.t_d) = 0; % time of administration of MP (ZT)
     p.val(p.k_el) = 0.277; % rate of elimination of MP (hr^-1)
 
