@@ -66,8 +66,7 @@ eda = y(v.eda);
 
 % equations
 L = lightx(t,x);
-mpt = mpt(t,mp0,k_el, t_d);
-vdat = dat(eda, mpt, k_mp, v_dat, k_dat);
+vdat = dat(eda, mpt(t,mp0,k_el, t_d), k_mp, v_dat, k_dat);
 dy(v.p1) = r1*L*f0(bc,p4) - r2*p1;
 dy(v.p2) = r2*p1 - r3*p2;
 dy(v.p3) = r3*p2 - r4*p3;
@@ -76,7 +75,7 @@ dy(v.bc) = beta_bc*s - d_bc*bc;
 dy(v.s) = beta + alpha*f0(s,rev)*ror - d_s*s;
 dy(v.rev) = r_rev*f0(bc,p4) - d_rev*rev;
 dy(v.ror) = r_ror*f0(bc,p4) - d_ror*ror;
-dy(v.th) = b_th + r(th,rev) + a(th,rev,ror)- d_th*th - gamma*(eda / (eda + k_eda))*th;
+dy(v.th) = b_th + r(th, rev, rho_th, k_th, epsilon_th, n_th) + a(th,rev,ror,alpha_th,epsilon_th,kappa_th)- d_th*th - gamma*(eda / (eda + k_eda))*th;
 dy(v.mao) = r_m*f0(bc,p4) - d_m*mao;
 dy(v.eda) = v_th*th - v_mao*mao - vdat;  
     
