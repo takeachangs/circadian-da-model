@@ -11,6 +11,5 @@ function v = var_indices
     v.th = 9;
     v.mao = 10;
     v.eda = 11;
-    v.mp = 12; 
 
 end
