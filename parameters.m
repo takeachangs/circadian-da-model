@@ -76,18 +76,18 @@ function p = parameters
     p.val(p.kappa_th) = 1;
     p.val(p.r_m) = 3;
     p.val(p.d_m) = 0.02;
-    % TODO: add the rest of the values
-    p.val(p.v_th) = 0.5; % Maximum rate of TH
+    
+    p.val(p.v_th) = 34.7; % Maximum rate of TH
     p.val(p.k_eda) = 0.5; % [eda] at which the feedback inhibition is half-maximal
-    p.val(p.v_mao) = 0.5; % Maximum rate of MAO
+    p.val(p.v_mao) = 25.9; % Maximum rate of MAO
     % V_DAT rate of DA reuptake
-    p.val(p.v_dat) = 0.5; % Maximum rate of DAT
-    p.val(p.k_mp) = 0.5; % Inhibiotary constant for MP
-    p.val(p.k_dat) = 0.5; % Michaelis-Menten constant for DAT
+    p.val(p.v_dat) = 2222.2; % Maximum rate of DAT
+    p.val(p.k_mp) = 0.45; % Inhibitory constant for MP
+    p.val(p.k_dat) = 200; % Michaelis-Menten constant for DAT
     % MP(t) conentration decay function 
-    p.val(p.mp0) = 0; % administered concentration of MP
-    p.val(p.t_d) = 0; % time of administration of MP
-    p.val(p.k_el) = 0; % rate of elimination of MP
+    p.val(p.mp0) = 5.0; % administered concentration of MP (nM)
+    p.val(p.t_d) = 0; % time of administration of MP (ZT)
+    p.val(p.k_el) = 0.277; % rate of elimination of MP (hr^-1)
 
 end
 
