@@ -4,7 +4,7 @@ p = parameters;
 v = var_indices;
 
 init_y = [ones(1,10), 0]; 
-ode_opt = {'RelTol',1e-8,'AbsTol',1e-8};
+ode_opt = {'RelTol',1e-3,'AbsTol',1e-3};
 tspan = [0 24*50];
 [~,Y] = model(tspan,init_y,p,v,ode_opt);
 
