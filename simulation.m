@@ -25,4 +25,3 @@ th = Y(:,v.th);
 mao = Y(:,v.mao);
 eda = Y(:,v.eda);
 
-
