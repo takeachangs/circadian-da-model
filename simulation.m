@@ -27,7 +27,7 @@ eda = Y(:,v.eda);
 figure; % Create a new figure window
 
 % Plot TH concentration against time
-plot(T, th, '-b', 'LineWidth', 2);
+plot(T, th, '-b', 'LineWidth', 3);
 hold on; % Hold on to plot multiple lines on the same graph
 
 % Plot MAO concentration against time
@@ -38,8 +38,21 @@ plot(T, eda, '-g', 'LineWidth', 2);
 
 xlabel('Time (hours)'); 
 ylabel('Concentration'); 
-title('Concentration of TH, MAO, and EDA over 24 Hours'); 
+title('Concentration of TH, MAO, and EDA over 24 Hours (0.5 mg of MPH)'); 
 legend({'TH', 'MAO', 'EDA'}, 'Location', 'best'); 
+
 grid on; % Add a grid for better readability
 
 hold off; % Release the plot hold
+
+% Extract values at specific time points
+time_points = [1, 4, 8, 12, 16, 20];
+th_values = th(time_points);
+mao_values = mao(time_points);
+eda_values = eda(time_points);
+
+% Create a table of values
+table_values = table(time_points', th_values, mao_values, eda_values, 'VariableNames', {'Time', 'TH', 'MAO', 'EDA'});
+
+% Display the table
+disp(table_values);
